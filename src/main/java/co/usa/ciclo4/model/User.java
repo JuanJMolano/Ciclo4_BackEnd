@@ -7,11 +7,16 @@ import lombok.RequiredArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ *
+ * @author Juan Molano
+ */
 @Entity
 @Data       /*Crea los getters y setters automáticamente*/
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Table(name="user", indexes = @Index(name = "indx_email", columnList = "user_email", unique = true))
+
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
